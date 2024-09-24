@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1727100771 source:c:\users\penaj\desktop\programación para mecatronicos\programas\programa 3.4\main.c
+	<stdio.h>
+	<stdlib.h>
+
