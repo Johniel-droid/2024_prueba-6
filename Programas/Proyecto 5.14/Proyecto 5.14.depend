@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1729081119 source:c:\users\penaj\desktop\programación para mecatronicos\programas\proyecto 5.14\main.c
+	<stdio.h>
+	<math.h>
+
