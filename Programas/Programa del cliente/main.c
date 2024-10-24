@@ -1,69 +1,60 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-void convertir(int n);
-void manu();
+void convertirenletras(int numero);
 
 int main(void){
-menu();
+float numero;
+int parteentera, centavos;
+
+printf("Ingrese una cantidad del 1 al 10: ");
+scanf("%f", &numero);
+
+parteentera = (int)numero;
+centavos = (int)((numero - parteentera) * 100);
+
+if (parteentera >= 1 && parteentera <= 10) {
+        printf("El número en letras es: ");
+        convertirenletras(parteentera);
+        printf("con %d centavos\n", centavos);
+
+} else {
+printf("El numero es muy grande");
+}
 return 0;
 }
-
-void menu(){
-int repetir = 1;
-
-while (repetir){
-    float numero;
-    int parteentera, partedecimal;
-
-    printf("\nIngrese un numero con dos decimales ");
-    scanf("%f", &numero);
-
-    parteentera = (int)numero;
-    partedecimal = (int)((numero - parteentera) * 100);
-
-    printf("El numero en letras es: ");
-    convertir(parteentera);
-    printf("con %d centavos\n", partedecimal);
-
-
-printf("\nQuiere convertir otro numero? (1 = si, 0 = no): ");
-scanf("%d", &repetir);
-    }
-}
-
-void convertir(int n){
-
-char *unidades[] = {"", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"};
-char *decenas[] = {"", "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"};
-char *especiales[] = {"diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve" };
-char *centenas[] = {"", "cien", "doscientos", "trescientos", "cuatrocientos", "quinientos", "seiscientos", "setecientos", "ochocientos", "novecientos"};
-
-if (n == 0){
-    printf("cero ");
-    return;
-}
-
-if (n >= 100){
-    if (n == 100){
-        printf("cien ");
-    } else {
-    printf("%s ", centenas[n / 100]);
-    }
-    n = n % 100;
-}
-
-if (n >= 10 && n <= 19) {
-    printf("%s ", especiales[n - 10]);
-} else {
-
-if (n >= 20){
-    printf("%s ", decenas[n / 10]);
-    n = n % 10;
-}
-
-if (n > 0){
-    printf("%s ", unidades[n]);
-}
+void convertirenletras(int numero){
+switch(numero){
+case 1:
+    printf("Uno ");
+    break;
+case 2:
+    printf("Dos ");
+    break;
+case 3:
+    printf("Tres ");
+    break;
+case 4:
+    printf("Cuatro ");
+    break;
+case 5:
+    printf("Cinco ");
+    break;
+case 6:
+    printf("seis ");
+    break;
+case 7:
+    printf("Siete ");
+    break;
+case 8:
+    printf("Ocho ");
+    break;
+case 9:
+    printf("nueve ");
+    break;
+case 10:
+    printf("diez");
+    break;
+default:
+    printf("Numero fuera de rango.\n");
 }
 }
